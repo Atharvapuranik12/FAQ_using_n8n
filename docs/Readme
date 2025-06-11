@@ -1,4 +1,4 @@
-Gemini RAG Chatbot for Altibbe - Quick Setup Guide
+Gemini RAG Chatbot - Quick Setup Guide
 Developer: Atharva Puranik
 
 Overview:
@@ -26,5 +26,4 @@ Test the Flow:
 In n8n, "Execute Workflow" on the Webhook node.
 
 Send cURL command:
-
 curl -X POST http://localhost:5678/webhook-test/faq -H "Content-Type: application/json" -d "{\"question\": \"Do you have JS Course?\"}"
