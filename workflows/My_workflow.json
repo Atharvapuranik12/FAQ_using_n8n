@@ -1,0 +1,58 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6411de62-1495-40fa-a6ea-d8f4eae8eb48",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "faq",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        260,
+        20
+      ],
+      "id": "0cae1142-27fa-416c-a50f-04a240326148",
+      "name": "Webhook",
+      "webhookId": "149eda6e-3ac5-49f5-91e7-87c3b5658664"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a18959b9-14b0-408f-bfef-ac014e851223",
+  "meta": {
+    "instanceId": "990517e3b07495f225fa7357ab47d3a7dbe0e0ab3a5bc20455f8b75ef1174b43"
+  },
+  "id": "QAa4v6gdPEURwbtc",
+  "tags": []
+}
