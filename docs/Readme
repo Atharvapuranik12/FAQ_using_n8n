@@ -26,4 +26,4 @@ Test the Flow:
 In n8n, "Execute Workflow" on the Webhook node.
 
 Send cURL command:
-curl -X POST http://localhost:5678/webhook-test/faq -H "Content-Type: application/json" -d "{\"question\": \"Do you have JS Course?\"}"
+curl -X POST http://localhost:5678/webhook-test/faq -H "Content-Type: application/json" -d "{\"question\": \"Tell me about the historical drama series currently trending."}"
