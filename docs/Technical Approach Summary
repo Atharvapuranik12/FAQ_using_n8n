@@ -1,0 +1,25 @@
+Gemini RAG Chatbot - Technical Approach Summary
+Developer: Atharva Puranik
+
+Problem Statement:
+To create an n8n-integrated chatbot capable of answering user questions based on a local FAQ dataset using Retrieval-Augmented Generation (RAG).
+
+Architecture Highlights:
+1.Data Source: FAQs.csv is loaded via CSVLoader, with text converted to vectors using HuggingFace's MiniLM embedding model.
+2.Vector Index: FAISS stores and enables fast similarity searches on embedded data for relevant context retrieval.
+3.RAG Pipeline: LangChain's RetrievalQA chain fetches context, then prompts Gemini 1.5 Flash to answer using only the provided context. An "I don't know" response prevents hallucination.
+4.Flask API: A Flask backend (/ask endpoint) processes incoming questions through the RAG pipeline.
+5.n8n Integration: An n8n Webhook receives user questions, forwards them to the Flask API, and a "Respond to Webhook" node sends the Gemini-generated answer back.
+
+Tools Used:
+1.Backend API: Flask
+2.RAG Pipeline: LangChain
+3.Embeddings: HuggingFace Transformers (MiniLM)
+4.Vector Search: FAISS
+5.Large Language Model (LLM): Google Gemini 1.5 Flash
+6.Workflow Automation: n8n
+
+Key Principles:
+1.Ethical Handling: Explicitly responds "I don't know" if context is insufficient to prevent factual inaccuracies.
+2.Testing: Validated via cURL, Postman, and the n8n interface.
+3.Outcome: A real-time, modular, and ethically designed chatbot that effectively answers questions from local documents, integrated with n8n for automation.
