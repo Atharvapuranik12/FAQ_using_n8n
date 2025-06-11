@@ -1,0 +1,30 @@
+Gemini RAG Chatbot for Altibbe - Quick Setup Guide
+Developer: Atharva Puranik
+
+Overview:
+This RAG chatbot leverages LangChain, FAISS, and Google Gemini 1.5 Flash to provide automated FAQ answers. It uses a Flask API for the backend and n8n for workflow orchestration, sourcing FAQs from a local CSV.
+
+Setup Instructions:
+Prerequisites:
+1.Python 3.10+
+2.Node.js & npx
+
+pip packages: flask, langchain, langchain-google-genai, faiss-cpu, huggingface-hub, python-dotenv
+
+Environment Setup:
+1.Run Flask API:
+2.cd scripts
+3.python faqflask.py
+4.Server runs at: http://localhost:5000/ask
+
+Start n8n:
+1.npx n8n
+2.Access n8n UI: http://localhost:5678
+3.Import workflow: workflows/rag-chatbot-workflow.json
+
+Test the Flow:
+In n8n, "Execute Workflow" on the Webhook node.
+
+Send cURL command:
+
+curl -X POST http://localhost:5678/webhook-test/faq -H "Content-Type: application/json" -d "{\"question\": \"Do you have JS Course?\"}"
